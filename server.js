@@ -5,6 +5,7 @@ const server = http.createServer(app);
 const {Server} = require('socket.io');
 const io = new Server(server);
 const path = require('path');
+const PORT = process.env.PORT  || 3000
 
 app.set('view engine', 'ejs')
 // app.use(express.static('views'))
@@ -41,7 +42,7 @@ app.get('/', (req,res) => {
 
 
 // server listen
-server.listen(3000, (http)=> {
-    console.log(`Port is runnig on server http://localhost:3000`);
+server.listen(PORT, (http)=> {
+    console.log(`Port is runnig on server http://localhost:${PORT}`);
 
 });
